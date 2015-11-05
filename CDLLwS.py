@@ -41,17 +41,24 @@ class CDLLwS(object):
 			for j, x in enumerate(self):
 				if j == i: return x
 
-	def insert(self, i, x):
-		n = self[i] if len(self) > 0 else self.sentinel
-		x.prev = n.prev
-		x.next = n
-		x.prev.next = x
-		x.next.prev = x
-
+	def _insert_node(self, node, nextNode):
+		node.prev = nextNode.prev
+		node.next = nextNode
+		node.prev.next = node
+		node.next.prev = node
 		self.len += 1
 
-	def append(self, x):
-		self.insert(len(self), x)
+	def insert(self, i, node):
+		self._insert_data(
+			node,
+			self.__getitem__(i, getNode=True) if len(self) > 0 else self.sentinel
+		)
+
+	def append(self, node):
+		self._insert_node(
+			node,
+			self.sentinel
+		)
 
 	def pop(self, i=None):
 		if i == None: i = -1
