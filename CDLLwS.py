@@ -17,7 +17,7 @@ class CDLLwS(object):
 		self.sentinel.next = self.sentinel.prev = self.sentinel
 
 		self.len = 0
-
+		
 	def __len__(self):
 		return self.len
 
@@ -63,7 +63,7 @@ class CDLLwS(object):
 		self.len -= 1
 		return x
 
-	def find(self, s, propName):
+	def find(self, s, propName="data"):
 		for x in self:
 			if getattr(x, propName) == s:
 				return x
