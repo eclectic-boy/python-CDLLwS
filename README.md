@@ -85,9 +85,9 @@ l = CDDlwS(Node)
 l.append(Node(...))
 ```
 
-###`pop(self, i=None)`
+###`pop(self, i=-1)`
 
-Lets you remove an element from the `CDLLwS` instance and return it like a normal `list`. If parameter `i` (*&lt;int&gt;*) is equal to `None` the last item is removed otherwise `i` must be and integer number indicating the position of the item to remove. e.g.:
+Lets you remove an element from the `CDLLwS` instance and return it like a normal `list`. If parameter `i` (*&lt;int&gt;*) is equal to `-1` the last item is removed otherwise `i` must be and integer number indicating the position of the item to remove. e.g.:
 
 ```python
 l = CDDlwS(Node)

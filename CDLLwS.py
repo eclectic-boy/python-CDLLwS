@@ -60,8 +60,7 @@ class CDLLwS(object):
 			self.sentinel
 		)
 
-	def pop(self, i=None):
-		if i == None: i = -1
+	def pop(self, i=-1):
 		x = self[i]
 
 		x.prev.next = x.next
