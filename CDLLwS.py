@@ -70,5 +70,5 @@ class CDLLwS(object):
 		return None
 
 	def __str__(self):
-		return map(str, iter(self))
+		return str(map(lambda x:x.data, self))
 		
